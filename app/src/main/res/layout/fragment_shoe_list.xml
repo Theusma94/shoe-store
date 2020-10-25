@@ -14,11 +14,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Empty list"
-                    android:gravity="center"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/empty_list_text"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:text="Empty list"-->
+<!--                    android:gravity="center"/>-->
 
             </LinearLayout>
         </ScrollView>

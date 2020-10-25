@@ -6,11 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ItemShoeBinding
+import com.udacity.shoestore.ui.ShoeViewModel
+import timber.log.Timber
 
 class ShoeListFragment: Fragment() {
+
+    private val shoeViewModel: ShoeViewModel by activityViewModels()
 
     lateinit var shoeListBinding: FragmentShoeListBinding
 
@@ -21,8 +28,16 @@ class ShoeListFragment: Fragment() {
     ): View? {
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         shoeListBinding.floatAddShoeButton.setOnClickListener {
+            shoeViewModel.prepareInsertion()
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
+        shoeViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
+            shoeList.forEach { shoe ->
+                val itemBinding: ItemShoeBinding = DataBindingUtil.inflate(inflater, R.layout.item_shoe, container, false)
+                itemBinding.shoe = shoe
+                shoeListBinding.shoeList.addView(itemBinding.root)
+            }
+        })
         return shoeListBinding.root
     }
 }
