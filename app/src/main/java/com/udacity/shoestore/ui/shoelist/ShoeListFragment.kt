@@ -1,9 +1,7 @@
 package com.udacity.shoestore.ui.shoelist
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -38,6 +36,22 @@ class ShoeListFragment: Fragment() {
                 shoeListBinding.shoeList.addView(itemBinding.root)
             }
         })
+        setHasOptionsMenu(true)
         return shoeListBinding.root
+    }
+
+    private fun makeLogout() {
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.logout_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //Only one item. Not necessary check id
+        makeLogout()
+        return super.onOptionsItemSelected(item)
     }
 }
