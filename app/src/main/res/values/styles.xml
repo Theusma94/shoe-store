@@ -17,6 +17,12 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="ButtonNextOnboarding" parent="android:Widget.Button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableRight">@drawable/ic_next</item>
+        <item name="android:text">NEXT</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
