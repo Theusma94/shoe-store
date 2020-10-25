@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="shoe"
@@ -8,72 +9,72 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="8dp">
 
         <TextView
-            android:id="@+id/shoe_name_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name:"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/shoe_name_value"
+            android:id="@+id/shoe_name_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{shoe.name}"
+            android:textColor="#3A3A3A"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_name_label"
-            app:layout_constraintStart_toEndOf="@+id/shoe_name_label" />
+            tools:text="Shoes Name" />
 
         <TextView
-            android:id="@+id/shoe_company_label"
+            android:id="@+id/shoe_company_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Company:"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_name_label"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/shoe_company_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Company"
+            android:textColor="#A6A6A6"
             android:text="@{shoe.company}"
-            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_company_label"
-            app:layout_constraintStart_toEndOf="@+id/shoe_company_label" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_item_text" />
 
         <TextView
-            android:id="@+id/shoe_size_label"
+            android:id="@+id/shoe_size_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Size:"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_company_label"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/shoe_size_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="#A6A6A6"
+            tools:text="24.6"
             android:text="@{Double.toString(shoe.size)}"
-            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_size_label"
-            app:layout_constraintStart_toEndOf="@+id/shoe_size_label" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_company_item_text"
+            app:layout_constraintStart_toEndOf="@+id/shoe_company_item_text"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_item_text" />
 
         <TextView
-            android:id="@+id/shoe_description_label"
+            android:id="@+id/shoe_description_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description:"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_size_label"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/shoe_description_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@{shoe.description}"
-            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_description_label"
-            app:layout_constraintStart_toEndOf="@+id/shoe_description_label" />
+            android:textColor="#A6A6A6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_company_item_text"
+            tools:text="This is a little description about the shoes" />
+
+        <ImageView
+            android:id="@+id/shoe_item_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_item_shoe"
+            app:layout_constraintBottom_toBottomOf="@+id/shoe_size_item_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#3A3A3A"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_description_item_text"
+            tools:layout_editor_absoluteX="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
