@@ -30,6 +30,7 @@ class ShoeListFragment: Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
         shoeViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
+            if(shoeList.isNotEmpty()) shoeListBinding.emptyListText.visibility = View.GONE
             shoeList.forEach { shoe ->
                 val itemBinding: ItemShoeBinding = DataBindingUtil.inflate(inflater, R.layout.item_shoe, container, false)
                 itemBinding.shoe = shoe
