@@ -11,7 +11,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.ui.ShoeViewModel
-import timber.log.Timber
 
 class ShoeListFragment: Fragment() {
 
@@ -52,6 +51,7 @@ class ShoeListFragment: Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Only one item. Not necessary check id
+        shoeViewModel.clearShoes()
         makeLogout()
         return super.onOptionsItemSelected(item)
     }

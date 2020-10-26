@@ -9,7 +9,7 @@ import com.udacity.shoestore.BR
 import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 
-class ShoeViewModel: ViewModel() {
+class ShoeViewModel : ViewModel() {
 
     var shoeItem: Shoe? = null
     private var shoes = mutableListOf<Shoe>()
@@ -40,12 +40,17 @@ class ShoeViewModel: ViewModel() {
     }
 
     fun prepareInsertion() {
-        shoeItem = Shoe("",0.0,"","")
+        shoeItem = Shoe("", 0.0, "", "")
         shoeObservable.shoeSize = ""
     }
 
+    fun clearShoes() {
+        shoes.clear()
+    }
+
     val shoeObservable = ShoeObservable()
-    inner class ShoeObservable: BaseObservable() {
+
+    inner class ShoeObservable : BaseObservable() {
         var shoeSize: String = ""
 
         @Bindable
@@ -55,7 +60,7 @@ class ShoeViewModel: ViewModel() {
 
         @Bindable
         fun setNewSize(size: String) {
-            if(shoeSize != size) {
+            if (shoeSize != size) {
                 shoeSize = size
 
                 notifyPropertyChanged(BR.newSize)
