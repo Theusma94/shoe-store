@@ -31,19 +31,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Email"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintStart_toStartOf="@+id/email_input"
                 app:layout_constraintTop_toBottomOf="@+id/login_label_text" />
 
             <EditText
                 android:id="@+id/email_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/colorAccent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/email_label_text" />
@@ -54,35 +55,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Password"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
-                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/password_input"
                 app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
             <EditText
                 android:id="@+id/password_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
                 android:inputType="textPassword"
-                android:textColor="@color/colorAccent"
+                style="@style/EditTextTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/password_label_text" />
-
-            <Button
-                android:id="@+id/create_user_button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Create"
-                android:background="@drawable/shape_login_button"
-                style="@style/ButtonLogin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
             <TextView
                 android:id="@+id/have_user_question_text"
@@ -99,16 +88,28 @@
 
             <Button
                 android:id="@+id/login_button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Login"
                 style="@style/ButtonLogin"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/shape_login_button"
+                android:text="Login"
                 app:layout_constraintBottom_toTopOf="@+id/create_user_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+            <Button
+                android:id="@+id/create_user_button"
+                style="@style/ButtonLogin"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_login_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Create"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_button" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
