@@ -27,8 +27,12 @@ class ShoeViewModel: ViewModel() {
             shoes.add(shoe)
         }
         Timber.i(shoeItem.toString())
-        _shoeInsertionFinalized.value = true
+        finalizeInsertion()
         _shoeList.value = shoes
+    }
+
+    fun finalizeInsertion() {
+        _shoeInsertionFinalized.value = true
     }
 
     fun onDetailFinished() {
