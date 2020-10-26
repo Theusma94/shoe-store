@@ -12,7 +12,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="ButtonLoginStyle" parent="android:Widget.Button">
+    <style name="ButtonLogin" parent="android:Widget.Button">
         <item name="android:backgroundTint">@color/colorPrimaryDark</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
