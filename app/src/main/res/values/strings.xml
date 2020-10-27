@@ -34,5 +34,11 @@
     <string name="shoe_detail_description_label">Description</string>
     <string name="shoe_detail_save_button_text">Save</string>
     <string name="shoe_detail_cancel_button_text">Cancel</string>
-    
+
+    <!-- Content Description -->
+    <string name="description_shoe_store_image">shoe store image</string>
+    <string name="description_fab_image">float action button image</string>
+    <string name="description_shoe_image_colored">shoe image colored</string>
+    <string name="description_shoe_black_and_white_image">black and white shoe image</string>
+
 </resources>

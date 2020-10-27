@@ -28,6 +28,7 @@
             android:id="@+id/shoe_image"
             android:layout_width="@dimen/welcome_shoe_image_width"
             android:layout_height="@dimen/welcome_shoe_image_height"
+            android:contentDescription="@string/description_shoe_image_colored"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/welcome_text"

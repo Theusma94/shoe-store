@@ -42,9 +42,11 @@
                 android:layout_width="@dimen/login_input_width"
                 android:layout_height="@dimen/login_input_height"
                 android:inputType="textEmailAddress"
+                android:labelFor="@+id/email_label_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_label_text" />
+                app:layout_constraintTop_toBottomOf="@+id/email_label_text"
+                android:autofillHints="Email input" />
 
             <TextView
                 android:id="@+id/password_label_text"
@@ -63,10 +65,12 @@
                 android:layout_width="@dimen/login_input_width"
                 android:layout_height="@dimen/login_input_height"
                 android:inputType="textPassword"
+                android:labelFor="@+id/password_label_text"
                 style="@style/EditText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_label_text" />
+                app:layout_constraintTop_toBottomOf="@+id/password_label_text"
+                android:autofillHints="Password input" />
 
             <TextView
                 android:id="@+id/has_user_question_text"
