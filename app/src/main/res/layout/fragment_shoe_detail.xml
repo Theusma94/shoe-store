@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="@dimen/dimen_8dp">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -25,9 +25,9 @@
 
             <ImageView
                 android:id="@+id/store_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="@dimen/shoe_detail_image_width"
+                android:layout_height="@dimen/shoe_detail_image_height"
+                android:layout_marginTop="@dimen/dimen_16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
             <EditText
                 android:id="@+id/shoe_name_input"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/shoe_detail_input_height"
                 android:text="@={viewModel.shoeItem.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,8 +69,8 @@
             <EditText
                 android:id="@+id/shoe_company_input"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="@dimen/shoe_detail_input_height"
+                android:layout_marginTop="@dimen/dimen_8dp"
                 android:text="@={viewModel.shoeItem.company}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/guideline"
@@ -90,8 +90,8 @@
             <EditText
                 android:id="@+id/shoe_size_input"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="@dimen/shoe_detail_input_height"
+                android:layout_marginTop="@dimen/dimen_8dp"
                 android:inputType="numberDecimal"
                 android:text="@={viewModel.shoeObservable.newSize}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -112,8 +112,8 @@
             <EditText
                 android:id="@+id/shoe_description_input"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="@dimen/shoe_detail_input_height"
+                android:layout_marginTop="@dimen/dimen_8dp"
                 android:text="@={viewModel.shoeItem.description}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/guideline"
@@ -126,8 +126,8 @@
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> viewModel.addShoe()}"
                 android:text="Save"
-                android:layout_marginEnd="4dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
                 android:background="@drawable/shape_shoe_detail_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/shoe_cancel_button"
@@ -142,8 +142,8 @@
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> viewModel.finalizeInsertion()}"
                 android:text="Cancel"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_16dp"
                 android:background="@drawable/shape_shoe_detail_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
