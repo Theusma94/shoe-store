@@ -41,4 +41,7 @@
     <string name="description_shoe_image_colored">shoe image colored</string>
     <string name="description_shoe_black_and_white_image">black and white shoe image</string>
 
+    <!-- Menu -->
+    <string name="logout">Logout</string>
+
 </resources>
