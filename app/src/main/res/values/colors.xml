@@ -5,4 +5,7 @@
     <color name="colorAccent">#DB9527</color>
 
     <color name="editTextBackground">#ECBB6F</color>
+    <color name="onboardingTextLabelColor">#3A3A3A</color>
+    <color name="shoeItemPrimaryColor">#3A3A3A</color>
+    <color name="shoeItemSecondaryColor">#A6A6A6</color>
 </resources>

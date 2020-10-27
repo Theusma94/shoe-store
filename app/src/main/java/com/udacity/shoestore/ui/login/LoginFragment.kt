@@ -37,13 +37,13 @@ class LoginFragment : Fragment() {
         var returnCheckFields = false
         loginBinding.emailInput.apply {
             if (this.text.isEmpty()) {
-                this.error = "Field required"
+                this.error = requireContext().getString(R.string.field_required)
                 returnCheckFields = true
             }
         }
         loginBinding.passwordInput.apply {
             if (this.text.isEmpty()) {
-                this.error = "Field required"
+                this.error = requireContext().getString(R.string.field_required)
                 returnCheckFields = true
             }
         }

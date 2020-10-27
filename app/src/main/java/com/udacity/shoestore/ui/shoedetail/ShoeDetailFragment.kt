@@ -44,9 +44,9 @@ class ShoeDetailFragment : Fragment() {
 
     private fun showMissFieldError() {
         AlertDialog.Builder(requireContext())
-                .setTitle("Error")
-                .setMessage("You should complete all shoe fields")
-                .setPositiveButton("Ok") { dialogInterface, _ ->
+                .setTitle(requireContext().getString(R.string.shoe_detail_dialog_error_title))
+                .setMessage(requireContext().getString(R.string.shoe_detail_dialog_error_message))
+                .setPositiveButton(requireContext().getString(android.R.string.ok)) { dialogInterface, _ ->
                     dialogInterface.dismiss()
                 }
                 .setCancelable(false)
