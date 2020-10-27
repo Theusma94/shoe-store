@@ -13,6 +13,7 @@ class ShoeViewModel : ViewModel() {
 
     var shoeItem: Shoe? = null
     private var shoes = mutableListOf<Shoe>()
+
     private val _shoeList = MutableLiveData<List<Shoe>>()
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
@@ -21,14 +22,22 @@ class ShoeViewModel : ViewModel() {
     val shoeInsertionFinalized: LiveData<Boolean>
         get() = _shoeInsertionFinalized
 
+    private val _hasMissedFields = MutableLiveData<Boolean>()
+    val hasMissedFields: LiveData<Boolean>
+        get() = _hasMissedFields
+
     fun addShoe() {
         shoeItem?.let { shoe ->
             shoe.size = shoeObservable.shoeSize.ifBlank { "0.0" }.toDouble()
-            shoes.add(shoe)
+            Timber.i(shoeItem.toString())
+            if(shoe.hasEmptyField()) {
+                _hasMissedFields.value = true
+            } else {
+                shoes.add(shoe)
+                finalizeInsertion()
+                _shoeList.value = shoes
+            }
         }
-        Timber.i(shoeItem.toString())
-        finalizeInsertion()
-        _shoeList.value = shoes
     }
 
     fun finalizeInsertion() {
@@ -37,6 +46,7 @@ class ShoeViewModel : ViewModel() {
 
     fun onDetailFinished() {
         _shoeInsertionFinalized.value = false
+        _hasMissedFields.value = false
     }
 
     fun prepareInsertion() {

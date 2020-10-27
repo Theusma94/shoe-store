@@ -1,5 +1,7 @@
 package com.udacity.shoestore.ui.shoelist
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
@@ -19,9 +21,9 @@ class ShoeListFragment: Fragment() {
     lateinit var shoeListBinding: FragmentShoeListBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         shoeListBinding.floatAddShoeButton.setOnClickListener {

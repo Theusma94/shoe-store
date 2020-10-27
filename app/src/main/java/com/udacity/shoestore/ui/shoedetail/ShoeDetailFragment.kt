@@ -1,5 +1,6 @@
 package com.udacity.shoestore.ui.shoedetail
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +34,25 @@ class ShoeDetailFragment: Fragment() {
                 findNavController().navigateUp()
             }
         })
+        shoeViewModel.hasMissedFields.observe(viewLifecycleOwner, Observer { isShowError ->
+            if(isShowError) {
+                showMissFieldError()
+            }
+        })
         return shoeDetailBinding.root
+    }
+
+    private fun showMissFieldError() {
+        AlertDialog.Builder(requireContext())
+                .setTitle("Error")
+                .setMessage("You should complete all shoe fields")
+                .setPositiveButton("Ok") {
+                    dialogInterface, _ ->
+                    dialogInterface.dismiss()
+                }
+                .setCancelable(false)
+                .create()
+                .show()
     }
 
     override fun onDestroyView() {
