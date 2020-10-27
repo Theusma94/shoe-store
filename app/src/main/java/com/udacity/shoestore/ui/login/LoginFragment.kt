@@ -10,22 +10,43 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     lateinit var loginBinding: FragmentLoginBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        loginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container,false)
+        loginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         loginBinding.loginButton.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            if (!hasMissingFields()) {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
         }
         loginBinding.createUserButton.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            if (!hasMissingFields()) {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
         }
         return loginBinding.root
+    }
+
+    private fun hasMissingFields(): Boolean {
+        var returnCheckFields = false
+        loginBinding.emailInput.apply {
+            if (this.text.isEmpty()) {
+                this.error = "Field required"
+                returnCheckFields = true
+            }
+        }
+        loginBinding.passwordInput.apply {
+            if (this.text.isEmpty()) {
+                this.error = "Field required"
+                returnCheckFields = true
+            }
+        }
+        return returnCheckFields
     }
 }

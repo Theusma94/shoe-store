@@ -10,14 +10,14 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
-class WelcomeFragment: Fragment() {
+class WelcomeFragment : Fragment() {
 
     lateinit var welcomeBinding: FragmentWelcomeBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         welcomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         welcomeBinding.welcomeNextButton.setOnClickListener {

@@ -9,10 +9,11 @@ import com.udacity.shoestore.BR
 import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 
-class ShoeViewModel: ViewModel() {
+class ShoeViewModel : ViewModel() {
 
     var shoeItem: Shoe? = null
     private var shoes = mutableListOf<Shoe>()
+
     private val _shoeList = MutableLiveData<List<Shoe>>()
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
@@ -21,27 +22,45 @@ class ShoeViewModel: ViewModel() {
     val shoeInsertionFinalized: LiveData<Boolean>
         get() = _shoeInsertionFinalized
 
+    private val _hasMissedFields = MutableLiveData<Boolean>()
+    val hasMissedFields: LiveData<Boolean>
+        get() = _hasMissedFields
+
     fun addShoe() {
         shoeItem?.let { shoe ->
             shoe.size = shoeObservable.shoeSize.ifBlank { "0.0" }.toDouble()
-            shoes.add(shoe)
+            Timber.i(shoeItem.toString())
+            if (shoe.hasEmptyField()) {
+                _hasMissedFields.value = true
+            } else {
+                shoes.add(shoe)
+                finalizeInsertion()
+                _shoeList.value = shoes
+            }
         }
-        Timber.i(shoeItem.toString())
+    }
+
+    fun finalizeInsertion() {
         _shoeInsertionFinalized.value = true
-        _shoeList.value = shoes
     }
 
     fun onDetailFinished() {
         _shoeInsertionFinalized.value = false
+        _hasMissedFields.value = false
     }
 
     fun prepareInsertion() {
-        shoeItem = Shoe("",0.0,"","")
+        shoeItem = Shoe("", 0.0, "", "")
         shoeObservable.shoeSize = ""
     }
 
+    fun clearShoes() {
+        shoes.clear()
+    }
+
     val shoeObservable = ShoeObservable()
-    inner class ShoeObservable: BaseObservable() {
+
+    inner class ShoeObservable : BaseObservable() {
         var shoeSize: String = ""
 
         @Bindable
@@ -51,7 +70,7 @@ class ShoeViewModel: ViewModel() {
 
         @Bindable
         fun setNewSize(size: String) {
-            if(shoeSize != size) {
+            if (shoeSize != size) {
                 shoeSize = size
 
                 notifyPropertyChanged(BR.newSize)

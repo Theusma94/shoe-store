@@ -10,14 +10,14 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 
-class InstructionsFragment: Fragment() {
+class InstructionsFragment : Fragment() {
 
     lateinit var instructionsBinding: FragmentInstructionsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         instructionsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
         instructionsBinding.instructionNextButton.setOnClickListener {
