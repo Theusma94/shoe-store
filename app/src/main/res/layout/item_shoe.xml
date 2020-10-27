@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@{shoe.name}"
             android:textSize="@dimen/shoe_name_item_text_size"
+            android:textColor="@color/shoeItemPrimaryColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Shoes Name" />
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_4dp"
             tools:text="Company"
-            android:textColor="#A6A6A6"
+            android:textColor="@color/shoeItemSecondaryColor"
             android:text="@{shoe.company}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_item_text" />
@@ -38,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_8dp"
-            android:textColor="#A6A6A6"
+            android:textColor="@color/shoeItemSecondaryColor"
             tools:text="24.6"
             android:text="@{Double.toString(shoe.size)}"
             app:layout_constraintBaseline_toBaselineOf="@+id/shoe_company_item_text"
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
             android:text="@{shoe.description}"
-            android:textColor="#A6A6A6"
+            android:textColor="@color/shoeItemSecondaryColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_item_text"
@@ -69,7 +70,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/shoe_view_item_separator_height"
-            android:background="#3A3A3A"
+            android:background="@color/shoeItemPrimaryColor"
             android:layout_marginTop="@dimen/dimen_8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_description_item_text" />
