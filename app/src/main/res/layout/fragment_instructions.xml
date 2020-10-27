@@ -40,11 +40,11 @@
 
             <ImageView
                 android:id="@+id/fab_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 app:srcCompat="@drawable/fab"
                 android:textColor="#3A3A3A"
-                app:layout_constraintVertical_bias=".1"
+                app:layout_constraintVertical_bias=".05"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,25 +66,13 @@
                 android:id="@+id/instruction_third_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="For Logout, click on three dots on right how show in below image"
+                android:text="For Logout, click on three dots on right of toolbar"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintVertical_bias=".1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/instruction_second_text" />
-
-            <ImageView
-                android:id="@+id/instruction_fourth_text"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                app:srcCompat="@drawable/toolbar_list"
-                app:layout_constraintBottom_toTopOf="@+id/instruction_next_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias=".1"
-                app:layout_constraintTop_toBottomOf="@+id/instruction_third_text" />
 
             <Button
                 android:id="@+id/instruction_next_button"
