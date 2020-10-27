@@ -14,7 +14,7 @@ import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.ui.ShoeViewModel
 
-class ShoeListFragment: Fragment() {
+class ShoeListFragment : Fragment() {
 
     private val shoeViewModel: ShoeViewModel by activityViewModels()
 
@@ -31,7 +31,7 @@ class ShoeListFragment: Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
         shoeViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
-            if(shoeList.isNotEmpty()) shoeListBinding.emptyListText.visibility = View.GONE
+            if (shoeList.isNotEmpty()) shoeListBinding.emptyListText.visibility = View.GONE
             shoeList.forEach { shoe ->
                 val itemBinding: ItemShoeBinding = DataBindingUtil.inflate(inflater, R.layout.item_shoe, container, false)
                 itemBinding.shoe = shoe

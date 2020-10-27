@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     lateinit var loginBinding: FragmentLoginBinding
 
@@ -19,9 +19,9 @@ class LoginFragment: Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        loginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container,false)
+        loginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         loginBinding.loginButton.setOnClickListener {
-            if(!hasMissingFields()) {
+            if (!hasMissingFields()) {
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
             }
         }
@@ -34,13 +34,13 @@ class LoginFragment: Fragment() {
     private fun hasMissingFields(): Boolean {
         var returnCheckFields = false
         loginBinding.emailInput.apply {
-            if(this.text.isEmpty()) {
+            if (this.text.isEmpty()) {
                 this.error = "Field required"
                 returnCheckFields = true
             }
         }
         loginBinding.passwordInput.apply {
-            if(this.text.isEmpty()) {
+            if (this.text.isEmpty()) {
                 this.error = "Field required"
                 returnCheckFields = true
             }

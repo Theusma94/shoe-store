@@ -16,26 +16,26 @@ import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.ui.ShoeViewModel
 
 
-class ShoeDetailFragment: Fragment() {
+class ShoeDetailFragment : Fragment() {
 
     val shoeViewModel: ShoeViewModel by activityViewModels()
 
     lateinit var shoeDetailBinding: FragmentShoeDetailBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         shoeDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
         shoeDetailBinding.viewModel = shoeViewModel
         shoeViewModel.shoeInsertionFinalized.observe(viewLifecycleOwner, Observer {
-            if(it) {
+            if (it) {
                 findNavController().navigateUp()
             }
         })
         shoeViewModel.hasMissedFields.observe(viewLifecycleOwner, Observer { isShowError ->
-            if(isShowError) {
+            if (isShowError) {
                 showMissFieldError()
             }
         })
@@ -46,8 +46,7 @@ class ShoeDetailFragment: Fragment() {
         AlertDialog.Builder(requireContext())
                 .setTitle("Error")
                 .setMessage("You should complete all shoe fields")
-                .setPositiveButton("Ok") {
-                    dialogInterface, _ ->
+                .setPositiveButton("Ok") { dialogInterface, _ ->
                     dialogInterface.dismiss()
                 }
                 .setCancelable(false)

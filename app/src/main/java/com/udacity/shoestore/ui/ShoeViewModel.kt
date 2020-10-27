@@ -30,7 +30,7 @@ class ShoeViewModel : ViewModel() {
         shoeItem?.let { shoe ->
             shoe.size = shoeObservable.shoeSize.ifBlank { "0.0" }.toDouble()
             Timber.i(shoeItem.toString())
-            if(shoe.hasEmptyField()) {
+            if (shoe.hasEmptyField()) {
                 _hasMissedFields.value = true
             } else {
                 shoes.add(shoe)

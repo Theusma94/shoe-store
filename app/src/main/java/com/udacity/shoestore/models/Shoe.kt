@@ -8,7 +8,7 @@ data class Shoe(var name: String, var size: Double, var company: String, var des
                 val images: List<String> = mutableListOf()) : Parcelable {
 
     fun hasEmptyField(): Boolean {
-        if(name.isEmpty() || size == 0.0 || company.isEmpty() || description.isEmpty()) return true
+        if (name.isEmpty() || size == 0.0 || company.isEmpty() || description.isEmpty()) return true
         return false
     }
 }
