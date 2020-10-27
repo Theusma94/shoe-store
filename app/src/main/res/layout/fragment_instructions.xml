@@ -42,6 +42,7 @@
                 android:id="@+id/fab_image"
                 android:layout_width="@dimen/instruction_fab_image_width"
                 android:layout_height="@dimen/instruction_fab_image_height"
+                android:contentDescription="@string/description_fab_image"
                 app:srcCompat="@drawable/fab"
                 app:layout_constraintVertical_bias=".05"
                 app:layout_constraintBottom_toBottomOf="parent"
