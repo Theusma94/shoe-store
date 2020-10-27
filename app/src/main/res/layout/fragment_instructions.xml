@@ -10,8 +10,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
             <TextView
                 android:id="@+id/instruction_text"
                 android:layout_width="wrap_content"
@@ -69,7 +69,6 @@
                 android:text="For Logout, click on three dots on right of toolbar"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintVertical_bias=".1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/instruction_second_text" />
@@ -86,7 +85,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/instruction_fourth_text"
+                app:layout_constraintTop_toBottomOf="@+id/instruction_third_text"
                 app:layout_constraintVertical_bias="1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

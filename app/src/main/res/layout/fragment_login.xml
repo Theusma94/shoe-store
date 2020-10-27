@@ -31,12 +31,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Email"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                style="@style/TextLabel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
-
                 app:layout_constraintStart_toStartOf="@+id/email_input"
                 app:layout_constraintTop_toBottomOf="@+id/login_label_text" />
 
@@ -55,9 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Password"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                style="@style/TextLabel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="@+id/password_input"
@@ -68,7 +63,7 @@
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:inputType="textPassword"
-                style="@style/EditTextTheme"
+                style="@style/EditText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/password_label_text" />
@@ -88,7 +83,7 @@
 
             <Button
                 android:id="@+id/login_button"
-                style="@style/ButtonLogin"
+                style="@style/ButtonPrimary"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_login_button"
@@ -100,7 +95,7 @@
 
             <Button
                 android:id="@+id/create_user_button"
-                style="@style/ButtonLogin"
+                style="@style/ButtonPrimary"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_login_button"

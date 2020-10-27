@@ -6,14 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="editTextStyle">@style/EditTextTheme</item>
+        <item name="editTextStyle">@style/EditText</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="ButtonLogin" parent="android:Widget.Button">
+    <style name="ButtonPrimary" parent="android:Widget.Button">
         <item name="android:backgroundTint">@color/colorPrimaryDark</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
@@ -23,9 +23,16 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="EditTextTheme" parent="android:Widget.EditText">
+    <style name="EditText" parent="android:Widget.EditText">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:background">@drawable/shape_edit_text</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="TextLabel" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ButtonNextOnboarding" parent="android:Widget.Button">
