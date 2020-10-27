@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <!-- Common -->
+    <string name="next_button">NEXT</string>
+    <!-- Login -->
+    <string name="field_required">Field required</string>
+    <string name="login_label">Login</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="has_user_question_text">Don\'t have a user?</string>
+    <string name="create_user_text">Create</string>
+
+    <!-- Welcome -->
+    <string name="welcome_label">Welcome!</string>
+    <string name="welcome_text">We are very happy to have you with us. Shoe Store is
+        the best place with best brands to buy your shoes. We have many varieties shoes</string>
+
+    <!-- Instructions -->
+    <string name="instructions_label">Instructions</string>
+    <string name="instructions_first_text">When you enter to Shoe List screen, click on add buton like this:</string>
+    <string name="instructions_second_text">After this, you should insert appropriate information about shoe:
+        \n\nName\nCompany\nSize\nDescription\n\nClick to save to register your shoes :)</string>
+    <string name="instructions_third_text">For Logout, click on three dots on right of toolbar</string>
+
+    <!-- Shoe List -->
+    <string name="empty_list_message">Click on \'+\' to add Shoes</string>
+
+    <!-- Shoe Detail -->
+    <string name="shoe_detail_dialog_error_title">Error</string>
+    <string name="shoe_detail_dialog_error_message">You should complete all shoe fields</string>
+    <string name="shoe_detail_name_label">Name</string>
+    <string name="shoe_detail_company_label">Company</string>
+    <string name="shoe_detail_size_label">Size</string>
+    <string name="shoe_detail_description_label">Description</string>
+    <string name="shoe_detail_save_button_text">Save</string>
+    <string name="shoe_detail_cancel_button_text">Cancel</string>
+    
 </resources>

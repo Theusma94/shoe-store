@@ -16,7 +16,7 @@
                 android:id="@+id/instruction_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Instructions"
+                android:text="@string/instructions_label"
                 android:textSize="@dimen/main_label_text_size"
                 android:textStyle="bold"
                 android:textColor="#3A3A3A"
@@ -27,11 +27,11 @@
                 app:layout_constraintVertical_bias=".1"/>
 
             <TextView
-                android:id="@+id/instruction_one_text"
+                android:id="@+id/instruction_first_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/instruction_text_size"
-                android:text="When you enter to Shoe List screen, click on add buton like this:"
+                android:text="@string/instructions_first_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,14 +48,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/instruction_one_text" />
+                app:layout_constraintTop_toBottomOf="@+id/instruction_first_text" />
 
             <TextView
                 android:id="@+id/instruction_second_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/instruction_text_size"
-                android:text="After this, you should insert appropriate information about shoe:\n\nName\nCompany\nSize\nDescription\n\nClick to save to register your shoes :)"
+                android:text="@string/instructions_second_text"
                 app:layout_constraintVertical_bias=".1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +66,7 @@
                 android:id="@+id/instruction_third_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="For Logout, click on three dots on right of toolbar"
+                android:text="@string/instructions_third_text"
                 android:textSize="@dimen/instruction_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintVertical_bias=".1"

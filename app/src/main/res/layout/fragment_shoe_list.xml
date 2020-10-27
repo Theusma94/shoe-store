@@ -19,7 +19,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Click on '+' to add Shoes"
+                    android:text="@string/empty_list_message"
                     android:textSize="@dimen/empty_list_text_size" />
 
             </LinearLayout>
