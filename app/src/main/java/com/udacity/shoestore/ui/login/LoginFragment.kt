@@ -26,7 +26,9 @@ class LoginFragment : Fragment() {
             }
         }
         loginBinding.createUserButton.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            if (!hasMissingFields()) {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
         }
         return loginBinding.root
     }
